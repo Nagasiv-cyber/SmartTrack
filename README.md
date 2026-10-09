@@ -1,4 +1,4 @@
-\# SmartTrack
+# SmartTrack
 
 
 
@@ -6,9 +6,9 @@ Agent-aware traversability and adaptive path planning for lane-free heterogeneou
 
 
 
-\## Status
+## Status
 
-\- Week 1: CARLA 0.9.16 setup; pure pursuit steering + PI speed control on Town02 (scenario S1 baseline).
+- Week 1: CARLA 0.9.16 setup; pure pursuit steering + PI speed control on Town02 (scenario S1 baseline).
 
 
 
