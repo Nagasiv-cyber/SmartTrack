@@ -4,3 +4,4 @@ __pycache__/
 *.pyc
 dir
 *.zip
+perception/segformer_b0_iddlite/
