@@ -5,3 +5,4 @@ __pycache__/
 dir
 *.zip
 perception/segformer_b0_iddlite/
+*.tar

@@ -40,3 +40,17 @@ Stop-only: 0/10 collisions, 0/10 close calls, mean 28.3 s
 
 Collisions happen with trigger 19-24 m and slow walkers
 
+## Run 2 - 19 Oct 2026 - Full IDD (Part I), 27 classes (animal separate)
+
+Data: 6517 train / 476 tune (5% of drives, for epoch choice) / 981 val (scored once), 960x544, 512 crops
+
+Model: SegFormer-B0; 20 epochs, batch 8, AdamW 2e-4, cosine, AMP, seed 0; Colab T4, 3.3 min/epoch
+
+Result: VAL mIoU 55.9% (27 classes), 57.6% (official 26 classes); best tune 54.2% at epoch 20
+
+Good: road 93.3, car 85.4, bus 82.5, autorickshaw 77.0
+
+Weak: animal 12.9 (rare class), traffic light 1.9, bicycle 20.2, drivable fallback 60.2
+
+Next: oversample animal images; maybe IDD Part II or SegFormer-B2
+
