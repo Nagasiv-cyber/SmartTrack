@@ -30,3 +30,13 @@ Conclusion: main planner experiments use CARLA ground-truth segmentation (oracle
 
 model-in-the-loop runs report this gap honestly
 
+## Test 2 - 19 Oct 2026 - S3 pedestrian crossing, 10 random runs (seed 0)
+
+Random: trigger 15-30 m, walk speed 1.0-1.8 m/s, Town02
+
+Blind follow: 4/10 collisions, 8/10 close calls (<3 m), completed runs about 25.2 s
+
+Stop-only: 0/10 collisions, 0/10 close calls, mean 28.3 s
+
+Collisions happen with trigger 19-24 m and slow walkers
+
