@@ -1,4 +1,4 @@
-"""
+r"""
 Scenario S2: a stalled car blocks our lane.
 Modes:
   follow : blind road follower, ignores obstacles   -> expected to crash
@@ -119,8 +119,10 @@ def main():
                         throttle, brake, integral = 0.0, 1.0, 0.0
 
                 ego.apply_control(carla.VehicleControl(throttle=throttle, steer=steer, brake=brake))
+                back = tf.get_forward_vector()
                 spectator.set_transform(carla.Transform(
-                    tf.location + carla.Location(z=35), carla.Rotation(pitch=-90)))
+                    tf.location + carla.Location(x=-8 * back.x, y=-8 * back.y, z=5),
+                    carla.Rotation(pitch=-15, yaw=tf.rotation.yaw)))
                 log.writerow([tick, round(tf.location.x, 3), round(tf.location.y, 3),
                               round(speed_of(ego), 3), round(steer, 4), round(throttle, 3),
                               round(brake, 3), round(dist, 3)])
