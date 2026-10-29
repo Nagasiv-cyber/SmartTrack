@@ -1,0 +1,8 @@
+# Core plotting and offline A* planning dependencies
+# Install CARLA Python API separately with a version compatible with your simulator and Python.
+numpy
+scipy
+matplotlib
+Pillow
+# Optional: perception/ model inference requires torch and transformers.
+# See docs/SETUP.md before installing optional ML dependencies.
