@@ -31,7 +31,7 @@ The latest experimental results currently documented in this repository were com
 
 The perception results use different datasets, labels, and evaluation procedures: **67.2% and 55.9% are not a like-for-like model comparison**. The S3 trial is small; the methods used the same 10 generated crossing parameters, not necessarily independent simulator random seeds.
 
-**[View the evidence, saved plots and research limitations](docs/EVIDENCE.md)** · **[Upcoming work](docs/ROADMAP.md)** · **[Perception experiment log](perception/experiment_log.md)**
+**[View evidence and research limitations](docs/EVIDENCE.md)** · **[Setup and reproducibility guide](docs/SETUP.md)** · **[Upcoming work](docs/ROADMAP.md)** · **[Perception experiment log](perception/experiment_log.md)**
 
 ## Research evidence
 
@@ -79,7 +79,7 @@ smarttrack/
 
 ## Reproduce selected existing scripts
 
-Requirements include **CARLA 0.9.16**, Python, and suitable numerical/plotting libraries. CARLA must be installed and running locally for simulator scripts; it is **not** bundled with this repository. These examples reflect existing source code and **have not been re-run as part of this README update**.
+Requirements include **CARLA 0.9.16**, Python, and suitable numerical/plotting libraries. Install offline dependencies from `requirements.txt` and see [setup instructions](docs/SETUP.md). CARLA must be installed and running locally for simulator scripts; it is **not** bundled with this repository. These examples reflect existing source code and **have not been re-run as part of this README update**.
 
 From the repository root in Windows:
 
