@@ -43,6 +43,8 @@ def main():
     client.set_timeout(30.0)
     world = client.get_world()
     print("Map:", world.get_map().name)
+    if not world.get_map().name.endswith("Town02"):
+        raise RuntimeError("S2 baseline requires Town02. Load Town02 in CARLA before running.")
 
     original = world.get_settings()
     settings = world.get_settings()
