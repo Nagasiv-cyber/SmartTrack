@@ -57,8 +57,9 @@ def main():
         tf = route[40].transform
         tf.location.z += 0.3
         stalled = world.try_spawn_actor(bp.find("vehicle.audi.a2"), tf)
-        if stalled:
-            actors.append(stalled)
+        if stalled is None:
+            raise RuntimeError("Could not spawn the stalled vehicle; no cost map was generated. Check Town02, spawn point, and obstacle placement.")
+        actors.append(stalled)
 
         # Downward-looking perfect segmentation camera, centred 12 m ahead of the car
         cam_bp = bp.find("sensor.camera.semantic_segmentation")
