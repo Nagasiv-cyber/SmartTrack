@@ -6,6 +6,14 @@ SmartTrack is an **early-stage autonomous-driving research prototype** exploring
 
 This is an educational, simulation-based research project—not a road-ready autonomous-driving system.
 
+## Watch the 40-second project demo
+
+[![SmartTrack cinematic research demo on YouTube](https://img.youtube.com/vi/eBcouL98szo/hqdefault.jpg)](https://www.youtube.com/watch?v=eBcouL98szo)
+
+**[Watch SmartTrack: CARLA simulation and offline A* planning (unlisted YouTube)](https://www.youtube.com/watch?v=eBcouL98szo)**
+
+The short video is a **research portfolio overview**, not proof of an end-to-end autonomous vehicle: it combines **AI-generated cinematic concept visuals**, actual CARLA baseline-driving footage, CARLA **ground-truth** semantic cost mapping, and a saved **offline A*** planned path. The S3 collision comparison is from a small 10-configuration simulation batch. A fully integrated learned-perception-to-closed-loop-A* controller is **not** demonstrated.
+
 ## Research snapshot — 29 October 2026
 
 The latest experimental results currently documented in this repository were committed on **19 October 2026**.
