@@ -1,0 +1,24 @@
+name: Offline checks
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  syntax:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Check Python syntax without CARLA or third-party modules
+        run: |
+          python - <<'PY'
+          import ast
+          from pathlib import Path
+          sources = sorted(list(Path('sim').glob('*.py')) + list(Path('planner').glob('*.py')) + list(Path('perception').glob('*.py')))
+          for path in sources:
+              ast.parse(path.read_text(encoding='utf-8'), filename=str(path))
+              print('OK', path)
+          PY
