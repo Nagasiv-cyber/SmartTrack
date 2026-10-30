@@ -28,11 +28,12 @@ for i in range(args.runs):
         out = f"experiments/s3/batch/run{i:02d}_{mode}.csv"
         cmd = [sys.executable, "sim/s3_crossing.py", "--mode", mode,
                "--trigger", str(trigger), "--walk-speed", str(walk), "--out", out]
-        text = subprocess.run(cmd, capture_output=True, text=True).stdout
-        m = pattern.search(text)
+        proc = subprocess.run(cmd, capture_output=True, text=True)
+        if proc.returncode != 0:
+            raise RuntimeError(f"run {i} {mode} failed (exit {proc.returncode}):\n{proc.stderr}\n{proc.stdout}")
+        m = pattern.search(proc.stdout)
         if not m:
-            print(f"run {i} {mode}: could not read result")
-            continue
+            raise RuntimeError(f"run {i} {mode}: could not parse result:\n{proc.stdout}\n{proc.stderr}")
         result, time_s, dist = m.group(1), float(m.group(2)), float(m.group(3))
         rows.append([i, mode, trigger, walk, result, time_s, dist])
         print(f"run {i:2d} | {mode:6s} | trigger {trigger:4.1f} m | walk {walk:.2f} m/s | "
